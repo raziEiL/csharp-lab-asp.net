@@ -1,0 +1,25 @@
+﻿@model mvc_calculator.Models.HexCalculator
+@{
+    ViewData["Title"] = "Hex калькулятор";
+}
+<div class="text-center">
+    <h1>Hex калькулятор</h1>
+    @using(Html.BeginForm()) {  
+          <fieldset>
+                <legend >Введите два числа в 16 системе счисления:</legend>    
+                @Html.EditorFor(calc => calc.hexA) 
+                <br/><br/>
+                @Html.EditorFor(calc => calc.hexB)
+                <br/><br/> 
+                <input type = "submit"  value = "+" name = "command"/>
+                <input type = "submit" value = "-" name = "command"/>
+                <input type = "submit" value = "*" name = "command"/> 
+                <input type = "submit" value = "/" name = "command"/>
+                <input type = "submit" value = "mod" name = "command"/>
+                <input type = "submit" value = "pow" name = "command"/>
+                <input type = "submit" value = "log" name = "command"/>
+                <br/><br/>
+                <h2>Результат : @Html.DisplayFor(calc => calc.hexResult)</h2> 
+          </fieldset>
+    }
+</div>

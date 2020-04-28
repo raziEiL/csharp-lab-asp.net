@@ -1,0 +1,28 @@
+﻿@model mvc_calculator.Models.Calculator
+@{
+    ViewData["Title"] = "Массив";
+}
+<div class="text-center">
+    <h1>Массив</h1>
+    @using(Html.BeginForm()) {  
+          <div>
+                <legend >Введите числа разделя их запятой:</legend>    
+                @Html.EditorFor(calc => calc.c) 
+                <br/><br/> 
+                <input type = "submit"  value = "Сумма нечетных элементов" name = "command"/>
+                <br/><br/>
+                <input type = "submit"  value = "Сумма четных элементов" name = "command"/>
+                <br/><br/>
+                <h2>Результат : @Html.DisplayFor(calc => calc.result)</h2> 
+          </div>
+    }
+    <h3>Логи:</h3>
+    @{
+        if (Model != null){
+            foreach (var item in Model.logList)
+            {
+                <p>@item</p>
+            }
+        }
+    }
+</div>

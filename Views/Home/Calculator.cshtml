@@ -1,0 +1,25 @@
+﻿@model mvc_calculator.Models.Calculator
+@{
+    ViewData["Title"] = "Калькулятор";
+}
+<div class="text-center">
+    <h1>Калькулятор</h1>
+    @using(Html.BeginForm()) {  
+          <fieldset>
+                <legend >Введите два числа:</legend>    
+                @Html.EditorFor(calc => calc.a, new {htmlAttributes = new {@type = "number", @inputmode = "numeric"}}) 
+                <br/><br/>
+                @Html.EditorFor(calc => calc.b, new {htmlAttributes = new {@type = "number", @inputmode = "numeric"}})
+                <br/><br/> 
+                <input type = "submit"  value = "+" name = "command"/>
+                <input type = "submit" value = "-" name = "command"/>
+                <input type = "submit" value = "*" name = "command"/> 
+                <input type = "submit" value = "/" name = "command"/>
+                <input type = "submit" value = "mod" name = "command"/>
+                <input type = "submit" value = "pow" name = "command"/>
+                <input type = "submit" value = "log" name = "command"/>
+                <br/><br/>
+                <h2>Результат : @Html.DisplayFor(calc => calc.result)</h2> 
+          </fieldset>
+    }
+</div>
