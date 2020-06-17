@@ -14,3 +14,6 @@ Models/Calculator.cs
 Models/HexCalculator.cs  
 Views/Home  
 Views/Shared/_Layout.cshtml  
+
+## Информация
+Разработано в Visual Studio Code на C#
